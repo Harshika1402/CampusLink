@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { Modal } from "@/components/ui/Modal";
 import { usePlacementStore } from "@/lib/store";
 import { UserRole } from "@/types";
@@ -64,11 +65,28 @@ const ROLES_INFO: Array<{
 ];
 
 export function RoleSwitcherModal({ isOpen, onClose }: RoleSwitcherModalProps) {
+  const router = useRouter();
+  const pathname = usePathname();
   const { currentRole, switchRole } = usePlacementStore();
 
   const handleSelectRole = (role: UserRole) => {
     switchRole(role);
     onClose();
+
+    // Automatically navigate to the corresponding dashboard view without requiring page refresh
+    if (role === "STUDENT") {
+      router.push("/dashboard/student");
+    } else if (role === "PLACEMENT_ADMIN" || role === "PLACEMENT_OFFICER") {
+      router.push("/dashboard/admin");
+    } else if (role === "RECRUITER") {
+      router.push("/dashboard/admin/applications");
+    } else if (role === "ALUMNI") {
+      router.push("/dashboard/student/alumni-referrals");
+    } else if (role === "INTERNSHIP_COORDINATOR") {
+      router.push("/dashboard/student/internships");
+    } else {
+      router.push("/dashboard/student");
+    }
   };
 
   return (
