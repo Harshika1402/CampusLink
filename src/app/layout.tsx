@@ -26,6 +26,14 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "CampusLink — Placement Cell Portal | Connecting Talent with Opportunities",
   description: "CampusLink is an enterprise-grade placement management platform for universities to manage the complete recruitment lifecycle between students, placement cells, recruiters, and alumni.",
+  icons: {
+    icon: [
+      { url: "/images/CampusLink Favicon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/images/CampusLink Favicon.png",
+    apple: "/images/CampusLink Favicon.png",
+  },
 };
 
 export default function RootLayout({
