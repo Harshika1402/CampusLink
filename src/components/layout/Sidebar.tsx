@@ -109,7 +109,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       {/* Sidebar Container */}
       <aside
         className={cn(
-          "w-64 bg-ivory-light border-r border-stone-border flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-40 lg:static transition-transform duration-200 ease-in-out",
+          "w-64 bg-ivory-light border-r border-stone-border flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-40 lg:relative lg:inset-auto lg:h-full transition-transform duration-200 ease-in-out",
           isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >

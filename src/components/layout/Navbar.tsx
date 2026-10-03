@@ -52,7 +52,7 @@ export function Navbar({ onToggleSidebar, showSidebarToggle = true }: NavbarProp
 
   return (
     <>
-      <header className="h-16 bg-white border-b border-stone-border sticky top-0 z-30 px-4 sm:px-6 flex items-center justify-between">
+      <header className="h-16 shrink-0 bg-white border-b border-stone-border sticky top-0 z-30 px-4 sm:px-6 flex items-center justify-between">
         {/* Left Section: Logo & Toggle */}
         <div className="flex items-center gap-4">
           {showSidebarToggle && onToggleSidebar && (
